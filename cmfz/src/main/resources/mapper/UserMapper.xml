@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.bs.dao.UserDAO">
+    <select id="queryNum" parameterType="java.lang.String" resultType="Integer">
+        select count(*) from user0
+        <![CDATA[
+         where user_sex=#{sex} and user_cdate > (systimestamp - interval '${pre}' day)
+
+        ]]>
+    </select>
+</mapper>
